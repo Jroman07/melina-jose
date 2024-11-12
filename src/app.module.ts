@@ -14,8 +14,8 @@ import { TypeOrmModule } from '@nestjs/typeorm';
       username: 'root',
       password: 'JosDani_1007',
       database: 'binarios',
-      autoLoadEntities: true,
-      synchronize: true,
+      entities: [__dirname + '/**/*.entity{.ts,.js}'],
+      synchronize: false,
     })
   ],
   controllers: [AppController],
