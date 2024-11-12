@@ -1,14 +1,13 @@
 import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
 import { LandingServicesService } from './landing-services.service';
-import { CreateLandingServiceDto } from './dto/create-landing-service.dto';
-import { UpdateLandingServiceDto } from './dto/update-landing-service.dto';
+import { LandingServiceDto } from './dto/Landing-serviceDto';
 
 @Controller('landing-services')
 export class LandingServicesController {
   constructor(private readonly landingServicesService: LandingServicesService) {}
 
   @Post()
-  create(@Body() createLandingServiceDto: CreateLandingServiceDto) {
+  create(@Body() createLandingServiceDto: LandingServiceDto) {
     return this.landingServicesService.create(createLandingServiceDto);
   }
 
@@ -23,7 +22,7 @@ export class LandingServicesController {
   }
 
   @Patch(':id')
-  update(@Param('id') id: string, @Body() updateLandingServiceDto: UpdateLandingServiceDto) {
+  update(@Param('id') id: string, @Body() updateLandingServiceDto: LandingServiceDto) {
     return this.landingServicesService.update(+id, updateLandingServiceDto);
   }
 
