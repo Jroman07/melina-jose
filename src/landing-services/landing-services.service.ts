@@ -10,7 +10,7 @@ export class LandingServicesService {
     @InjectRepository(LandingService)
     private landingServiceRepository: Repository<LandingService>,
   ){}
-  create(landingServiceDto: LandingServiceDto) {
+  async create(landingServiceDto: LandingServiceDto) {
     const newLandingService = this.landingServiceRepository.create(landingServiceDto);
     this.landingServiceRepository.save(newLandingService);
     return newLandingService;
