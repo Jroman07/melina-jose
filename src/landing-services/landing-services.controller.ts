@@ -1,10 +1,10 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
+import { Controller, Get, Post, Body, Put, Param, Delete } from '@nestjs/common';
 import { LandingServicesService } from './landing-services.service';
 import { LandingServiceDto } from './dto/Landing-serviceDto';
 
 @Controller('landing-services')
 export class LandingServicesController {
-  constructor(private readonly landingServicesService: LandingServicesService) {}
+  constructor(private landingServicesService: LandingServicesService) {}
 
   @Post()
   create(@Body() createLandingServiceDto: LandingServiceDto) {
@@ -17,17 +17,17 @@ export class LandingServicesController {
   }
 
   @Get(':id')
-  findOne(@Param('id') id: string) {
-    return this.landingServicesService.findOne(+id);
+  findOne(@Param('id') id: number) {
+    return this.landingServicesService.findOne(id);
   }
 
-  @Patch(':id')
-  update(@Param('id') id: string, @Body() updateLandingServiceDto: LandingServiceDto) {
-    return this.landingServicesService.update(+id, updateLandingServiceDto);
+  @Put(':id')
+  update(@Param('id') id: number, @Body() updateLandingServicesDto: LandingServiceDto) {
+    return this.landingServicesService.update(id, updateLandingServicesDto);
   }
 
   @Delete(':id')
-  remove(@Param('id') id: string) {
-    return this.landingServicesService.remove(+id);
+  remove(@Param('id') id: number) {
+    return this.landingServicesService.remove(id);
   }
 }
