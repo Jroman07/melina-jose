@@ -1,5 +1,5 @@
 export class LandingServiceDto {
-    icon: string;
+    icons: string;
     tittle: string;
     description: string;
 }
