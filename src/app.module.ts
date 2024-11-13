@@ -3,10 +3,12 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { LandingServicesModule } from './landing-services/landing-services.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { HeaderModule } from './header/header.module';
 
 @Module({
   imports: [
     LandingServicesModule,
+    HeaderModule,
     TypeOrmModule.forRoot({
       type: 'mysql',
       host: 'localhost',
