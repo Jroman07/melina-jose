@@ -12,7 +12,7 @@ import {
   @Column()
   title: string;
 
-  @Column({ nullable: true }) // Permite que description sea opcional
+  @Column({ type: 'text' }) // Permite que description sea opcional
   description: string;
 
   @Column({ nullable: true }) // Permite que image sea opcional

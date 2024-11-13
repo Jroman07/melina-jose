@@ -12,6 +12,6 @@ export class LandingService {
     @Column()
     tittle: string;
 
-    @Column()
+    @Column( { type: 'text' } )
     description: string;
 }
