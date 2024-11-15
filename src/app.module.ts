@@ -16,10 +16,10 @@ import { HeaderModule } from './header/header.module';
       username: 'root',
       password: 'JosDani_1007',
       database: 'binarios',
-      entities: [__dirname + '/**/*.entity{.ts,.js}'],
-      synchronize: false,
+      autoLoadEntities: true,
+      synchronize: true,
     })
-  ],
+    ],
   controllers: [AppController],
   providers: [AppService],
 })

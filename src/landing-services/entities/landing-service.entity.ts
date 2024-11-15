@@ -1,6 +1,5 @@
 import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
 
-
 @Entity( {name: 'LandingServices'} )
 export class LandingService {
     @PrimaryGeneratedColumn()

@@ -5,7 +5,7 @@ import { Header } from './entities/header.entity';
 
 @Controller('header')
 export class HeaderController {
-  constructor(private readonly headerService: HeaderService) {}
+  constructor(private headerService: HeaderService) {}
 
   
   @Post()
@@ -18,20 +18,12 @@ export class HeaderController {
    findAll(){
     return this.headerService.findAll();
   }
-
  
   @Get(':id')
    findOne(@Param('id') id: number){
     return this.headerService.findOne(id);
   }
 
-  
-  // @Get('parte-jose-casa')
-  //  getParteJoseCasa(){
-  //   return this.headerService.findOne(1); 
-  // }
-
-  // Actualizar un header por ID
   @Put(':id')
   update(@Param('id') id: number, @Body() createHeaderDto: CreateHeaderDto) {
     return this.headerService.update(id, createHeaderDto);
